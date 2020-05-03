@@ -5,7 +5,7 @@ FROM $BASE_CONTAINER
 USER root
 
 # Install pre-requisites, for example:
-# - Geckodriver for altair saver using selenium and firefox
+# - Geckodriver for altair saver using selenium and firefox webdriver
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     firefox-geckodriver && \
