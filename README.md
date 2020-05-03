@@ -1,6 +1,6 @@
 # My Custom DataScience Jupyter Docker Stack
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aLoNsolml/my-jupyter-docker/master?urlpath=lab)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aLoNsolml/custom-ds-stack/master?urlpath=lab)
 
 A personal Jupyter Dockerfile based on `jupyter/datascience-notebook` with some custom packages, extensions and settings. More info in [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io). Try it with binder!
 
