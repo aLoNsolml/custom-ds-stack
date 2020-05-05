@@ -34,9 +34,10 @@ RUN conda install --quiet --yes \
 # Install jupyter lab extensions
 RUN jupyter labextension install @aquirdturtle/collapsible_headings --no-build && \
     # jupyter labextension install jupyterlab-dash@0.1.0-alpha.3 --no-build && \
-    # jupyter labextension install jupyterlab-drawio --no-build && \
+    jupyter labextension install jupyterlab-drawio --no-build && \
     jupyter labextension install @jupyterlab/shortcutui --no-build && \
     jupyter labextension install @jupyterlab/toc --no-build && \
+    jupyter labextension install @telamonian/theme-darcula --no-build && \
     jupyter lab build && \
     jupyter lab clean
 
