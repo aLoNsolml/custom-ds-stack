@@ -17,11 +17,16 @@ USER $NB_UID
 RUN conda install --quiet --yes \
     'altair=4' \
     'altair_saver' \
+    'contextily' \
     'dash' \
+    'descartes' \
     'fuzzywuzzy' \
+    'geopandas' \
     # 'jupyterlab-dash=0.1.0a3' \
     'jupytext' \
     'nbgrader' \
+    'nbresuse' \
+    'openpyxl' \
     'rise' \
     'pandas-profiling' \
     'vega_datasets' \
@@ -35,6 +40,8 @@ RUN conda install --quiet --yes \
 RUN jupyter labextension install @aquirdturtle/collapsible_headings --no-build && \
     # jupyter labextension install jupyterlab-dash@0.1.0-alpha.3 --no-build && \
     jupyter labextension install jupyterlab-drawio --no-build && \
+    jupyter labextension install jupyterlab-topbar-extension --no-build && \
+    jupyter labextension install jupyterlab-system-monitor --no-build && \
     jupyter labextension install @jupyterlab/shortcutui --no-build && \
     jupyter labextension install @jupyterlab/toc --no-build && \
     jupyter labextension install @telamonian/theme-darcula --no-build && \

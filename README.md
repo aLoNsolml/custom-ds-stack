@@ -10,6 +10,7 @@ A personal Jupyter Dockerfile based on `jupyter/datascience-notebook` with some 
     - altair
     - altair_saver
     - dash
+    - geopandas
     - jupytext
     - nbgrader
     - pandas-profiling
@@ -19,15 +20,18 @@ A personal Jupyter Dockerfile based on `jupyter/datascience-notebook` with some 
     - xgboost
 * JupyterLab extensions:
     - Collpasible Headings
+    - Drawio
     - Shortcutui
+    - System Monitor
     - Table of Contents
+    - Theme Darcula
 * Custom JupyrLab user settings
     - Dark theme for the terminal
     - More shortcuts:
         * Restart Kernel and Clear All: `Alt+O`
         * Restart Kernel and Run All: `Alt+P`
 
-Additionaty, it includes packages for save [Altair](https://altair-viz.github.io/) charts objects using `selenium` method and Firefox webdriver. For example, the following lines save a simple scatter-plot to PNG.
+Additionally, it includes packages for save [Altair](https://altair-viz.github.io/) charts objects using `selenium` method and Firefox webdriver. For example, the following lines save a simple scatter-plot to PNG.
 
 ```python
 import altair as alt
@@ -48,7 +52,7 @@ More info about saving Altair charts [here](https://altair-viz.github.io/user_gu
 
 You can add other packages from conda or pip, even jupyter notebook/lab extensions modifying the `Dockerfile`.
 
-In order to add more custom settings you should copy necessary folders and files in the `.jupyter` folder as any JupyterLab installation.
+In order to add more custom settings you should copy necessary folders and files in the `.jupyter` folder as any other JupyterLab installation.
 
 ## Docker usage
 
@@ -58,7 +62,11 @@ In order to build the image run in the same directory where `Dockerfile` is:
 
 Then, start a container based on your new image using JupyterLab running:
 
-`docker run -it --name <YOUR-CONTAINER-NAME> -p <LOCAL-PORT>:8888 -v <YOUR-WORK-DIRECTORY>:/home/jovyan/work <YOUR-IMAGE-TAG> start.sh jupyter lab`
+`docker run --name <YOUR-CONTAINER-NAME> -p <LOCAL-PORT>:8888 -v <YOUR-WORK-DIRECTORY>:/home/jovyan/work <YOUR-IMAGE-TAG> start.sh jupyter lab`
+
+I usually run my containers without token on my local machine using the following code:
+
+`docker run --name <YOUR-CONTAINER-NAME> -p <LOCAL-PORT>:8888 -v <YOUR-WORK-DIRECTORY>:/home/jovyan/work <YOUR-IMAGE-TAG> start.sh jupyter lab --LabApp.token=''`
 
 You can stop the container with:
 
