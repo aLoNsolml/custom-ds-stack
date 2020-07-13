@@ -27,6 +27,7 @@ RUN conda install --quiet --yes \
     'nbgrader' \
     'nbresuse' \
     'openpyxl' \
+    'osmnx' \
     'rise' \
     'pandas-profiling' \
     'vega_datasets' \
